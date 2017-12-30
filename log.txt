@@ -1,0 +1,42 @@
+LEVEL  NAME         EXECUTION_ID     TIME_UTC                 LOG
+D      ocr-extract  181551880777105  2017-12-29 04:13:01.096  Function execution started
+I      ocr-extract  181551880777105  2017-12-29 04:13:01.468  Looking for text in image test-doc.pdf
+I      ocr-extract  181551880777105  2017-12-29 04:13:02.265  Extracted text from image (0 chars)
+E      ocr-extract  181551880777105  2017-12-29 04:13:02.765  ApiError: Google Cloud Translation API has not been used in project bpw-poc before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/translate.googleapis.com/overview?project=bpw-poc then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+                                                                  at Object.parseHttpRespBody (/user_code/node_modules/@google-cloud/translate/node_modules/@google-cloud/common/src/util.js:192:30)
+                                                                  at Object.handleResp (/user_code/node_modules/@google-cloud/translate/node_modules/@google-cloud/common/src/util.js:132:18)
+                                                                  at /user_code/node_modules/@google-cloud/translate/node_modules/@google-cloud/common/src/util.js:465:12
+                                                                  at Request.onResponse [as _callback] (/user_code/node_modules/@google-cloud/translate/node_modules/retry-request/index.js:195:7)
+                                                                  at Request.self.callback (/user_code/node_modules/@google-cloud/translate/node_modules/request/request.js:186:22)
+                                                                  at emitTwo (events.js:106:13)
+                                                                  at Request.emit (events.js:191:7)
+                                                                  at Request.<anonymous> (/user_code/node_modules/@google-cloud/translate/node_modules/request/request.js:1163:10)
+                                                                  at emitOne (events.js:96:13)
+                                                                  at Request.emit (events.js:188:7)
+D      ocr-extract  181551880777105  2017-12-29 04:13:02.770  Function execution took 1675 ms, finished with status: 'error'
+D      ocr-extract  181487796017520  2017-12-29 04:19:17.316  Function execution started
+I      ocr-extract  181487796017520  2017-12-29 04:19:17.323  Looking for text in image menu.jpg
+E      ocr-extract  181487796017520  2017-12-29 04:19:17.377  Error: Stream removed
+                                                                  at /user_code/node_modules/@google-cloud/vision/node_modules/grpc/src/client.js:554:15
+D      ocr-extract  181487796017520  2017-12-29 04:19:17.766  Function execution took 451 ms, finished with status: 'error'
+D      ocr-text     181581968325890  2017-12-30 00:24:06.627  Function execution started
+E      ocr-text     181581968325890  2017-12-30 00:24:07.109  TypeError: vision.ImageAnnotatorClient is not a constructor
+                                                                  at detectText (/user_code/index.js:56:18)
+                                                                  at Promise.resolve.then (/user_code/index.js:130:14)
+                                                                  at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+D      ocr-text     181581968325890  2017-12-30 00:24:07.122  Function execution took 496 ms, finished with status: 'error'
+D      ocr-extract  181581968325890  2017-12-30 00:24:08.544  Function execution started
+I      ocr-extract  181581968325890  2017-12-30 00:24:14.960  Looking for text in image test1.pdf
+I      ocr-extract  181581968325890  2017-12-30 00:24:15.356  Extracted text from image (0 chars)
+E      ocr-extract  181581968325890  2017-12-30 00:24:15.519  ApiError: Daily Limit Exceeded
+                                                                  at Object.parseHttpRespBody (/user_code/node_modules/@google-cloud/translate/node_modules/@google-cloud/common/src/util.js:192:30)
+                                                                  at Object.handleResp (/user_code/node_modules/@google-cloud/translate/node_modules/@google-cloud/common/src/util.js:132:18)
+                                                                  at /user_code/node_modules/@google-cloud/translate/node_modules/@google-cloud/common/src/util.js:465:12
+                                                                  at Request.onResponse [as _callback] (/user_code/node_modules/@google-cloud/translate/node_modules/retry-request/index.js:195:7)
+                                                                  at Request.self.callback (/user_code/node_modules/@google-cloud/translate/node_modules/request/request.js:186:22)
+                                                                  at emitTwo (events.js:106:13)
+                                                                  at Request.emit (events.js:191:7)
+                                                                  at Request.<anonymous> (/user_code/node_modules/@google-cloud/translate/node_modules/request/request.js:1163:10)
+                                                                  at emitOne (events.js:96:13)
+                                                                  at Request.emit (events.js:188:7)
+D      ocr-extract  181581968325890  2017-12-30 00:24:15.527  Function execution took 6984 ms, finished with status: 'error'

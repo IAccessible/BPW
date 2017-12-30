@@ -1,0 +1,7 @@
+{
+    "RESULT_TOPIC": "bpw-poc-ocr",
+  "RESULT_BUCKET": "bpw-poc-output",
+    "TRANSLATE_TOPIC": "bpw-translate-ocr",
+  "TRANSLATE": true,
+    "TO_LANG": [ "en", "fr", "es", "ja", "ru" ]
+}
