@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+    <AssemblyName>bpw.poc.web</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>bpw.poc.web</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="wwwroot\**\*;Views\**\*;Areas\**\Views">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Diagnostics.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+  </ItemGroup>
+
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <Exec Command="bower install" />
+    <Exec Command="dotnet bundle" />
+  </Target>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
+  </ItemGroup>
+
+</Project>
