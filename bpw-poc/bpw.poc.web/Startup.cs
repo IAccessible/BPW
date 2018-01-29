@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Data.Common;
+using MySql.Data.MySqlClient;
+using Microsoft.EntityFrameworkCore;
+using MySql.Data.EntityFrameworkCore;
+using bpw.poc.web.models;
 
 namespace bpw.poc.web
 {
@@ -26,9 +31,13 @@ namespace bpw.poc.web
         public void ConfigureServices(IServiceCollection services)
         {
             string projectId = GetProjectId();
+
+            // add db connection
+                        services.AddDbContext<BpwDbContext>(options => options.UseMySQL(InitializeDBConnection()));            
+            
             // Add framework services.Microsoft.VisualStudio.ExtensionManager.ExtensionManagerService
             services.AddMvc();
-            
+
             // Enables Stackdriver Trace.
             services.AddGoogleTrace(options => options.ProjectId = projectId);
             // Sends Exceptions to Stackdriver Error Reporting.
@@ -39,6 +48,23 @@ namespace bpw.poc.web
                     options.ServiceName = GetServiceName();
                     options.Version = GetVersion();
                 });
+        }
+
+        private DbConnection InitializeDBConnection()
+        {
+            // [START mysql_connection]
+            var connectionString = new MySqlConnectionStringBuilder(
+                Configuration["db:ConnectionString"])
+            {
+                SslMode = MySqlSslMode.Required,
+                CertificateFile =
+                    Configuration["db:CertificateFile"]
+            };
+
+            DbConnection connection =
+                new MySqlConnection(connectionString.ConnectionString);
+            // [END mysql_connection]
+            return connection;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,7 +89,7 @@ namespace bpw.poc.web
 
             app.UseStaticFiles();
             app.UseGoogleTrace();
-
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

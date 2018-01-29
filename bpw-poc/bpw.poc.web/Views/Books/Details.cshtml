@@ -1,0 +1,25 @@
+﻿@model bpw.poc.web.models.book
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.book_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.book_name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.book_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

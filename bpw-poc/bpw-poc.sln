@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bpw.poc.web", "bpw.poc.web\bpw.poc.web.csproj", "{9EE5AC2F-890A-4CAD-AE08-B83D3ED09A4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bpw.poc.web", "bpw.poc.web\bpw.poc.web.csproj", "{9EE5AC2F-890A-4CAD-AE08-B83D3ED09A4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bpw.poc.data", "bpw.poc.data\bpw.poc.data.csproj", "{9605192A-84B3-4B1C-BDAE-97FA85F0F04C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9EE5AC2F-890A-4CAD-AE08-B83D3ED09A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE5AC2F-890A-4CAD-AE08-B83D3ED09A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE5AC2F-890A-4CAD-AE08-B83D3ED09A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9605192A-84B3-4B1C-BDAE-97FA85F0F04C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9605192A-84B3-4B1C-BDAE-97FA85F0F04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9605192A-84B3-4B1C-BDAE-97FA85F0F04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9605192A-84B3-4B1C-BDAE-97FA85F0F04C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
